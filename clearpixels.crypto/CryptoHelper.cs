@@ -20,36 +20,37 @@
  * @author         Sean Lin Meng Teck <seanlinmt@clearpixels.co.nz>
  * @copyright      2012-2013 Clear Pixels Limited
  */
+using clearpixels.crypto;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace clearpixels.Helpers.crypto
 {
-    // TODO: i have a feeling this might end up like http://dilbert.com/strips/comic/2001-10-25/. Try use microsoft's implementation.
-    public sealed class RandomNumberGenerator : Random
+    public static class CryptoHelper
     {
-        private static readonly Random _global = new Random();
-        [ThreadStatic]
-        private static Random _localInstance;
-
-        RandomNumberGenerator()
+        public static string GetRandomString(int length = 6, bool uppercase = false)
         {
+            var values = new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 
+                'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 
+                'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 
+                'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-        }
-
-        public static Random Instance
-        {
-            get
+            var sb = new StringBuilder();
+            Random rnd = RandomNumberGenerator.Instance;
+            for (int j = 0; j < length; j++)
             {
-                Random inst = _localInstance;
-                if (inst == null)
-                {
-                    int seed;
-                    lock (_global) seed = _global.Next();
-                    _localInstance = new Random(seed);
-                }
-                return _localInstance;
+                var idx = rnd.Next(0, 61);
+                sb.Append(values[idx]);
             }
+
+            if (uppercase)
+            {
+                return sb.ToString().ToUpper();
+            }
+
+            return sb.ToString();
         }
     }
-
 }

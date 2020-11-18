@@ -104,8 +104,8 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\ikutku.github\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\ikutku.github\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\ikutku.github\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\ikutku.github\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
@@ -130,9 +130,6 @@
     <Compile Include="authentication\FormsAuthenticationHelper.cs" />
     <Compile Include="concurrency\ActionHelper.cs" />
     <Compile Include="concurrency\ParallelHelper.cs" />
-    <Compile Include="crypto\BCrypt.cs" />
-    <Compile Include="crypto\CryptoHelper.cs" />
-    <Compile Include="crypto\RandomNumberGenerator.cs" />
     <Compile Include="CurrencyHelper.cs" />
     <Compile Include="database\ContextExtensions.cs" />
     <Compile Include="database\DeadlockPriority.cs" />
@@ -143,7 +140,7 @@
     <Compile Include="database\TransactionHelper.cs" />
     <Compile Include="database\UpdateExpression.cs" />
     <Compile Include="datetime\timer\TimerEntry.cs" />
-    <Compile Include="datetime\timer\TimerWaitQueues.cs" />
+    <Compile Include="datetime\timer\TimerWaitQueue.cs" />
     <Compile Include="generics\LinqExtensions.cs" />
     <Compile Include="database\IDataContextFactory.cs" />
     <Compile Include="database\IRepository.cs" />
@@ -166,9 +163,11 @@
     <Compile Include="messaging\EmailMessageService.cs" />
     <Compile Include="messaging\email\MailHelper.cs" />
     <Compile Include="messaging\IMessageService.cs" />
+    <Compile Include="mvc\baseCommonMVCController.cs" />
     <Compile Include="networking\NetworkHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteHelper.cs" />
+    <Compile Include="scheduling\CacheScheduler.cs" />
     <Compile Include="SelectListHelper.cs" />
     <Compile Include="SerializerHelper.cs" />
     <Compile Include="StringHelper.cs" />
@@ -190,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="database\timer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

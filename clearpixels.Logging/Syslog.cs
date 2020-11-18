@@ -75,5 +75,12 @@ namespace clearpixels.Logging
 
             Write(lex);
         }
+
+        public static void Write(ErrorLevel errorLevel, string message)
+        {
+            var lex = new ExceptionWrapper(errorLevel.ToString(), new Exception(message));
+
+            Write(lex);
+        }
     }
 }

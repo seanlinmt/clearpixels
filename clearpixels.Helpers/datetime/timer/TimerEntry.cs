@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace clearpixels.Helpers.datetime.timer
 {
-    class TimerEntry
+    public class TimerEntry
     {
+
     }
 }

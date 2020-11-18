@@ -97,6 +97,11 @@ namespace clearpixels.Helpers.concurrency
             return returnValueList;
         }
 
+        public CancellationToken GetCancellationToken()
+        {
+            return _token;
+        }
+
         public void ProcessData<TSource>(IEnumerable<TSource> data,
             Action<TSource> body)
         {
@@ -129,6 +134,11 @@ namespace clearpixels.Helpers.concurrency
 
                 if (exceptions.Count > 0) throw new AggregateException(exceptions);
             }
+        }
+
+        public void Cancel()
+        {
+            _cts.Cancel();
         }
     }
 }
