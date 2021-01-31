@@ -7,36 +7,36 @@ using clearpixels.Logging;
 using tradelr.Library;
 using HttpUtility = System.Web.HttpUtility;
 
-namespace ClearPixels.OAuth
+namespace clearpixels.OAuth
 {
     public class OAuthClient : OAuthBase
     {
         // oauth
         // trademe
 #if DEBUG
-        public const string OAUTH_TRADEME_CONSUMER_KEY = "D30C8D776F9B53DD0D04C74EB0EF04D784";
-        public const string OAUTH_TRADEME_CONSUMER_SECRET = "5470699BB0FD485039039708250CB97FFC";
+        public const string OAUTH_TRADEME_CONSUMER_KEY = "*********************";
+        public const string OAUTH_TRADEME_CONSUMER_SECRET = "*********************";
 #else
-        public const string OAUTH_TRADEME_CONSUMER_KEY = "505FDB9A0785B145873D0DADF2E9962099";
-        public const string OAUTH_TRADEME_CONSUMER_SECRET = "ED87AE05693F1D8688FC32A666B2D977F7";
+        public const string OAUTH_TRADEME_CONSUMER_KEY = "*********************";
+        public const string OAUTH_TRADEME_CONSUMER_SECRET = "*********************";
 #endif
 
         // twitter
         // for domain admin
-        public const string OAUTH_TWITTER_CONSUMER_KEY = "gUjkfRr9QRmROpVGY16xw";
-        public const string OAUTH_TWITTER_CONSUMER_SECRET = "XIjSc3QzkeT9ZJ5haH9bshNic46hA7ZRdbifkCpdF9U";
+        public const string OAUTH_TWITTER_CONSUMER_KEY = "*********************";
+        public const string OAUTH_TWITTER_CONSUMER_SECRET = "*********************";
 
         // for users
-        public const string OAUTH_TWITTER_NETWORK_CONSUMER_KEY = "EU4BFCDyBgiAvrmB8FMyA";
-        public const string OAUTH_TWITTER_NETWORK_CONSUMER_SECRET = "dResJr2iyUXKjdERAXI9400UsVzmgQBsA4ns8cWWPJw";
+        public const string OAUTH_TWITTER_NETWORK_CONSUMER_KEY = "*********************";
+        public const string OAUTH_TWITTER_NETWORK_CONSUMER_SECRET = "*********************";
 
         // yahoo
 #if DEBUG
-        public const string OAUTH_YAHOO_CONSUMER_KEY = "dj0yJmk9OVJ0eXp5TTdiMlR6JmQ9WVdrOWNUbGtRemM1TTJVbWNHbzlOelUxTWpNd05qWXkmcz1jb25zdW1lcnNlY3JldCZ4PTcx";
-        public const string OAUTH_YAHOO_CONSUMER_SECRET = "ca0c815e5788882936f2cf7da1e5dd4d4c42dd52";
+        public const string OAUTH_YAHOO_CONSUMER_KEY = "*********************";
+        public const string OAUTH_YAHOO_CONSUMER_SECRET = "*********************";
 #else
-        public const string OAUTH_YAHOO_CONSUMER_KEY = "dj0yJmk9R2JldFpWQjFDUzRvJmQ9WVdrOWJsbFlZVGROTmpRbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0xMg--";
-        public const string OAUTH_YAHOO_CONSUMER_SECRET = "d365c1e1afd0cf1f2b221558ee592258ec4a3ecf";
+        public const string OAUTH_YAHOO_CONSUMER_KEY = "*********************--";
+        public const string OAUTH_YAHOO_CONSUMER_SECRET = "*********************";
 #endif
 
         public string oauth_token { get; set; }
